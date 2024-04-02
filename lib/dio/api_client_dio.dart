@@ -1,6 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:flutterlearning/cache/xc_cache.dart';
-import 'package:flutterlearning/constans/constans.dart';
+import 'package:flutterlearning/constants/url_path.dart';
+import 'package:flutterlearning/dio/token_interceptor.dart';
+
+import '../constants/constans.dart';
 
 class ApiClientDio {
   late Dio _dio;
@@ -27,13 +30,12 @@ class ApiClientDio {
       XCCache.getInstance().getData(GlobalConfig.accessToken);
 
   void _setupInterceptors() {
-    // 添加拦截器...
+    _dio.interceptors.add(const TokenInterceptor());
   }
 
   void _setupOptions() {
     // 设置请求头
     _dio.options.headers['Content-Type'] = 'application/json';
-    _dio.options.headers['Authorization'] = 'Bearer your_access_token';
 
     // 设置请求超时时间
     _dio.options.connectTimeout =
