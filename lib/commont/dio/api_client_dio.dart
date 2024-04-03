@@ -1,9 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:flutterlearning/cache/xc_cache.dart';
-import 'package:flutterlearning/constants/url_path.dart';
-import 'package:flutterlearning/dio/token_interceptor.dart';
+import 'package:flutterlearning/commont/dio/token_interceptor.dart';
 
-import '../constants/constans.dart';
+import '../../constants/constans.dart';
+import '../cache/xc_cache.dart';
 
 class ApiClientDio {
   late Dio _dio;

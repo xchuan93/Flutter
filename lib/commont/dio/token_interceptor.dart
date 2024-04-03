@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 
+import '../../constants/constans.dart';
 import '../cache/xc_cache.dart';
-import '../constants/constans.dart';
 
 class TokenInterceptor extends Interceptor {
   const TokenInterceptor();
